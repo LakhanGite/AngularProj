@@ -1,0 +1,9 @@
+<h2>Nested Components Examples</h2>
+<div class="parent">
+  <h3>{{title}}</h3>
+  <app-child (updateEmployee) ="saveData($event)" [student] ="studentObject"> </app-child>
+  <!--<p>{{studentObject.fname + ' '+ studentObject.lname}} </p>-->
+  <p id="abc"></p>
+  <p>{{fullName}}</p>
+  <button (click)="someMethod(studentObject)">Student</button>
+</div>

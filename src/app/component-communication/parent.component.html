@@ -1,0 +1,7 @@
+<h2>  Component Communication </h2>
+<app-children [student]="studentObject" [message]="title" (updateEmployeeDetails)="saveData($event)"></app-children>
+<p> Child Changes, Parent also changes but in case of Object only : <span>{{studentObject.studentName}}</span> </p> 
+<p>Whereas in case of data types, it is not applicable : <span>{{title}}</span></p>
+
+<b>From Child : </b>
+<span>{{eID}}. {{eName}}, {{eAddress}}</span>

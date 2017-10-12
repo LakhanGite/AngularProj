@@ -1,0 +1,64 @@
+<h2 [ngClass]="{heading: true}">{{title}}</h2>
+<!--shortcut-->
+<h3 [class.paragraph]="true">{{attributeDirectives}}</h3>
+
+<h4 [class.subHeadings]="true">ngClass & ngStyle</h4>
+<p>ngClass _|^</p>
+<p [ngStyle]="{'color': 'green', 'float': 'right'}">ngStyle</p>
+
+<hr/>
+
+<h4 [class.subHeadings]="true">Custom Directive</h4>
+<p appDirectiveOne [defaultColor]="'black'" [highlightColor]="'red'">Directive : One (Custom Directive)</p>
+
+<p (mouseenter)="mouseEnterEvent()" (mouseleave)="mouseLeaveEvent()" [ngStyle]="{'float': 'right'}">
+  Directive : Three (Event Binding)
+</p>
+<br/>
+<h4>Highlight</h4>
+<div>
+  <input type="radio" name="colors" (click)="color='lightgreen'">Green
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+<p [appDirectiveOne]="color">Highlight me!</p>
+
+<h3 [class.paragraph]="true">{{structuralDirectives}}</h3>
+
+<h4 [class.subHeadings]="true">*ngIf</h4>
+<button *ngIf="switchFlag" class="btn btn-info" (click)="onSwitch()">Change</button> 
+<button *ngIf="!switchFlag" class="btn btn-default" (click)="onSwitch()">Change</button>
+<!--Works only with template tag-->
+<template [ngIf]="switchFlag">Change->True </template> 
+<template [ngIf]="!switchFlag">Change->False</template>
+
+
+<h4 [class.subHeadings]="true">*ngFor</h4>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of forArray; let i=index; let odd=odd; let even=even; 
+let first = first; let last = last; let c = count; trackBy: trackById">
+    array({{i}}) : {{item}} : {{odd}} : {{even}} : {{first}} : {{last}} : {{c}}
+  </li>
+</ul>
+
+<ul class="list-group">
+  <li *ngFor="let item of forArray; let i=index">{{forArray[i]}}</li>
+</ul>
+
+<h4 [class.subHeadings]="true">*ngSwitch</h4>
+<div [ngSwitch]=switchCondition>
+  <p *ngSwitchCase="'goplani'">goplani</p>
+  <p *ngSwitchCase="'aakash'">aakash</p>
+  <p *ngSwitchDefault>default-template</p>
+</div>
+
+<div [ngSwitch]=switchCondition>
+  <template [ngSwitchCase]="'goplani'">100000 goplani</template>
+  <template [ngSwitchCase]="'aakash'">100111 aakash</template>
+  <template ngSwitchDefault>default-template</template>
+</div>
+
+<h3 [class.paragraph]="true">{{structuralDirectives}}</h3>
+<h6 *appDirectiveTwo="switchFlag">Custom Directive </h6>
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>

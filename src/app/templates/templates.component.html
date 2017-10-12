@@ -1,0 +1,5 @@
+<h2>  {{title}} </h2>
+
+<p #bindParagraph>Interpolation : {{bind}}</p>
+<p>Reference (Local) Variable : {{bindParagraph.textContent}}</p>
+<app-inner-template #childHandle (click)="callChildMethod()">Button</app-inner-template>

@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- This stores the URL the user was attempting to go to in sessionStorage,
+    and then redirects all 404 responses to the app’s index.html page -->
+    <script>
+      sessionStorage.redirect = location.href;
+      console.log("404 : " , sessionStorage.redirect);
+    </script>
+    <meta http-equiv="refresh" content="0;URL='https://aakash14goplani.github.io/AngularJS2Basics'"></meta>
+  </head>
+  <body>
+  </body>
+</html>

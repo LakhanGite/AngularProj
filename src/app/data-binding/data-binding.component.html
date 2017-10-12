@@ -1,0 +1,49 @@
+<h2>Data Binding Examples</h2>
+<ol>
+  <li>
+    <h4>String Interpolation Example</h4>
+    <p>  {{stringInterpolation}} | {{numberInterpolation}}  </p>
+  </li>
+  <li>
+    <h4>Property Binding Example</h4>
+    <ul>
+      <li><input type="text" value="Some Value"/></li>
+      <li><input type="text" [value]="stringInterpolation" /></li>
+      <li><input type="text" value="{{numberInterpolation}}" /></li>
+      <li><input type="text" bind-value="someString" /></li>
+    </ul>
+    <p [ngClass]="{customCSS : true}">ngClass Example</p>
+    <p [ngClass]="{customCSS : methodCall()}" [ngStyle]="{color : 'green'}">
+      ngClass method invoke Example
+    </p>
+  </li>
+  <li>
+    <h4>Custom Property Binding</h4>
+    <app-custom-property-binding></app-custom-property-binding>
+    <app-custom-property-binding [someString]="'Custom Binding from Parent Component'">
+    </app-custom-property-binding>
+  </li>
+  <li>
+    <h4>Event Binding</h4>
+    <ul>
+      <li>
+        <p id="eventId"></p>
+        <button (click)="clickMethod()">Click Me!</button>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h4>Custom Event Binding</h4>
+    <ul>
+      <p id="customEventId"></p>
+      <li>
+        <app-custom-event-binding (clicked)="eventClickMethod($event)"></app-custom-event-binding>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h4>Two-Way Data Binding</h4>
+    <input type="text" [(ngModel)]="person.name" /> ==> {{person.name}} <br/><br/>
+    <input type="text" bindon-ngModel="person.age" /> ==> {{person.age}} <br/><br/>
+  </li>
+</ol>

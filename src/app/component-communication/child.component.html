@@ -1,0 +1,20 @@
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <td>{{student.studentId}}</td>
+  </tr>
+  <tr>
+    <th>Name</th>
+    <td><input type="text" [value]="student.studentName" (input)="student.studentName = $event.target.value" /> {{student.studentName}}</td>
+  </tr>
+  <tr>
+    <th>Address</th>
+    <td><input type="text" [value]="student.studentAddress" (input)="student.studentAddress = $event.target.value" /> {{student.studentAddress}}</td>
+  </tr>
+  <tr>
+    <th>String</th>
+    <td><input type="text" [value]="message" (input)="message = $event.target.value" /> {{message}}</td>
+  </tr>
+</table>
+
+<button (click)="updateRecords()">Update Records</button>
